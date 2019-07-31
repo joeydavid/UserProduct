@@ -15,12 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('context/about', 'ContextController@about');
+Route::get('context/blog', 'ContextController@blog');
+Route::get('context/contact', 'ContextController@contact');
+
 Route::get('testing', 'HomeController@test');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::resource('users', 'UserController');
 
