@@ -43,12 +43,12 @@
 
                             <div class="col-md-6">
                                 <select class="form-control @error('select') is-invalid @enderror" name="select" required>
-                                        @foreach($users as $value)
                                             <option selected disabled>Select User--</option>
+                                        @foreach($users as $value)
                                             <option value="{{ $value->name }}">{{ $value->name }}</option>
                                         @endforeach
                                 </select>
-                                @error('name')
+                                @error('select')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

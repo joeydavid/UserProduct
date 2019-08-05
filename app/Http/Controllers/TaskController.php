@@ -85,15 +85,14 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Task $task)
     {
         $request->validate([
             'title' => 'required',
             'description' => 'required',
             'select' => 'required',
         ]);
-        
-        $task =  Task::find($id);
+        $task =  Task::find($task->id);
         $task->title        = $request->title;
         $task->description  = $request->description;
         $task->select        = $request->select;

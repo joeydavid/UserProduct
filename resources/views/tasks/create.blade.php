@@ -43,13 +43,8 @@
 
                             <div class="col-md-6">
                                 <select class="form-control @error('select') is-invalid @enderror" name="select" required>
-                                    <!-- <option selected disabled>Select User--</option>
-                                    <option value="Full Access">Full Access</option>
-                                    <option value="Monitoring">Monitoring</option>
-                                    <option value="Limited Access">Limited Access</option>
-                                    <option value="Audit">Audit</option> -->
-                                    @foreach($users as $value)
                                         <option selected disabled>Select User--</option>
+                                    @foreach($users as $value)
                                         <option value="{{ $value->name }}">{{ $value->name }}</option>
                                     @endforeach
                                 </select>
