@@ -23,7 +23,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('home') }}">
+            @if(Auth::check())    
+            <a class="navbar-brand" href="{{ url('home') }}">
                     {{ __('Dashboard') }}
                 </a>
                 <a class="navbar-brand" href="{{ url('/users') }}">
@@ -35,10 +36,13 @@
                 <a class="navbar-brand" href="{{ url('/testing') }}">
                     {{ __('Testing') }}
                 </a>
+                <a class="navbar-brand" href="{{ url('/tasks') }}">
+                    {{ __('Tasks') }}
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+            @endif
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">

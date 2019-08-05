@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Product Details <a href="{{ url('products/create') }}" class="float-right">Create New</a></div>
+                <div class="card-header">Task Details <a href="{{ url('tasks/create') }}" class="float-right">Create New</a></div>
  
                 <div class="card-body">
                     @if (session('status'))
@@ -18,31 +18,28 @@
                     <table class="table">
                         <thead>
                             <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Barcode</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Delete</th>
-                            <th scope="col">Edit</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($products as $value)
+                            @foreach($tasks as $value)
                                 <tr>
                                     <td>
-                                        {{$value->name}}
-                                    </td>
-                                    <td>
-                                        {{$value->price}}
-                                    </td>
-                                    <td>
-                                        {{$value->barcode}}
+                                        {{$value->title}}
                                     </td>
                                     <td>
                                         {{$value->description}}
                                     </td>
                                     <td>
-                                        <form action="{{ route('products.destroy', $value->id)}}" method="post">
+                                        {{$value->select}}
+                                    </td>
+
+                                    <td>
+                                        <form action="{{ route('tasks.destroy', $value->id)}}" method="post" class="delete_form">
                                             @method('DELETE')
                                             @csrf
                                             <input type="hidden" value="{{$value->id}}">
@@ -50,7 +47,7 @@
                                         </form>
                                     </td>
                                     <td>
-                                        <form action="{{ route('products.edit', $value->id)}}" method="patch">
+                                        <form action="{{ route('tasks.edit', $value->id)}}" method="patch">
                                             @csrf
                                             <input type="hidden" value="{{$value->id}}">
                                             <input type="submit" value="Edit">
@@ -64,6 +61,20 @@
             </div>
         </div>
     </div>
-    {{ $products->links() }}
+    {{ $tasks->links() }}
 </div>
+<script>
+$(document).ready(function(){
+	$('.delete_form').on('submit', function(){
+		if(confirm("Are you sure you want to delete it?"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	});
+});
+</script>
 @endsection

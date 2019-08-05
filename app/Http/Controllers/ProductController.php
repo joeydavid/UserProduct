@@ -14,7 +14,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        // $products = Product::all();
+        // return view('products.index', compact('products'));
+
+        $products = Product::latest()->paginate(5);
         return view('products.index', compact('products'));
     }
 
@@ -37,6 +40,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'barcode' => 'required|numeric',
+            'description' => 'required',
+        ]);
+        
         // dd($request->all());
         Product::create([
             'name' => $request->name,
@@ -86,8 +96,14 @@ class ProductController extends Controller
         //     'description' => $request->description,
         // ]);
 
-        $product =  Product::find($product->id);
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'barcode' => 'required|numeric',
+            'description' => 'required',
+        ]);
 
+        $product =  Product::find($product->id);
         // dd($product);
         $product->name = $request->name;
         $product->price = $request->price;
