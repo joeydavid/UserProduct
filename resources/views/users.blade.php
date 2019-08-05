@@ -65,5 +65,6 @@
             </div>
         </div>
     </div>
+    {{ $users->links() }}
 </div>
 @endsection
