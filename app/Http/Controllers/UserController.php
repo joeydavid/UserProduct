@@ -15,9 +15,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        // $add = $this->addRecord(1, 3);
-        $users = User::all();
+        $users = User::latest()->paginate(2);
         return view('users', compact('users'));
+        // $add = $this->addRecord(1, 3);
+        // $users = User::all();
+        // return view('users', compact('users'));
     }
 
     /**

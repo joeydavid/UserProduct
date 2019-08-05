@@ -50,7 +50,7 @@
                                     <option value="Audit">Audit</option> -->
                                     @foreach($users as $value)
                                         <option selected disabled>Select User--</option>
-                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                        <option value="{{ $value->name }}">{{ $value->name }}</option>
                                     @endforeach
                                 </select>
                                 @error('select')

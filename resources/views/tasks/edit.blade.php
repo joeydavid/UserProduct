@@ -42,8 +42,12 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Select') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('select') is-invalid @enderror" name="select" value="{{ old('select', $task->select) }}" required autocomplete="select" autofocus>
-
+                                <select class="form-control @error('select') is-invalid @enderror" name="select" required>
+                                        @foreach($users as $value)
+                                            <option selected disabled>Select User--</option>
+                                            <option value="{{ $value->name }}">{{ $value->name }}</option>
+                                        @endforeach
+                                </select>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
