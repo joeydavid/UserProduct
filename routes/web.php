@@ -16,15 +16,25 @@ Route::get('/', function () {
 });
 
 Route::get('context/about', 'ContextController@about');
+
 Route::get('context/blog', 'ContextController@blog');
+    
 Route::get('context/contact', 'ContextController@contact');
 
-Route::get('testing', 'HomeController@test');
+Auth::routes(['verify' => true]);
 
-Auth::routes();
+Route::group([        
+    'middleware' => ['auth', 'verified'],    
+  ], function () {
+    
+    Route::get('testing', 'HomeController@test');
+    
+    Route::get('/home', 'HomeController@index')->name('home');
+    
+    Route::resource('users', 'UserController');
+    
+    Route::resource('products', 'ProductController');
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('tasks', 'TaskController');
 
-Route::resource('users', 'UserController');
-
-Route::resource('products', 'ProductController');
+  });

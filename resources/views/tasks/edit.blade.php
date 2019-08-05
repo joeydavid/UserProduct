@@ -5,16 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Product Entry') }} <a href="{{ url('products') }}" class="float-right">Product List</a> </div>
+                <div class="card-header">{{ __('Update Task') }} <a href="{{ url('tasks') }}" class="float-right">Back</a> </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ url('products') }}">
+                    <form method="POST" action="{{ route('tasks.update', $task->id) }}">
                         @csrf
-                        
+                        @method('patch')
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Title') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $task->title) }}" required autocomplete="title" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -25,10 +25,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
+                                <input id="name" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description', $task->description) }}" required autocomplete="description" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -39,26 +39,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Barcode') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Select') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="number" class="form-control @error('barcode') is-invalid @enderror" name="barcode" value="{{ old('barcode') }}" required autocomplete="barcode" autofocus>
+                                <input id="name" type="text" class="form-control @error('select') is-invalid @enderror" name="select" value="{{ old('select', $task->select) }}" required autocomplete="select" autofocus>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="description">
-
-                                @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -69,7 +55,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Submit') }}
+                                    {{ __('Update') }}
                                 </button>
                             </div>
                         </div>
