@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Task;
 use App\User;
+use App\Product;
 
 class TaskController extends Controller
 {
@@ -28,10 +29,11 @@ class TaskController extends Controller
      */
     public function create()
     {
+        $products = Product::paginate(5);
         $users = User::all();
 
         // dd($users);
-        return view('tasks.create', compact('users'));
+        return view('tasks.create', compact('users', 'products'));
     }
 
     /**
@@ -45,12 +47,12 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'select' => 'required',
+            'user' => 'required',
         ]);
         Task::create([
             'title'         => $request->title,
             'description'   => $request->description,
-            'select'         => $request->select,
+            'user'         => $request->user,
         ]);
         return redirect('tasks')->with('success', 'Task Added Successfully.');
     }
@@ -90,12 +92,12 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'select' => 'required',
+            'user' => 'required',
         ]);
         $task =  Task::find($task->id);
         $task->title        = $request->title;
         $task->description  = $request->description;
-        $task->select        = $request->select;
+        $task->user        = $request->user;
         $task->save();
 
         return redirect('tasks')->with('success', 'Task Updated Successfully.');

@@ -12,14 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend/index');
 });
 
-Route::get('context/about', 'ContextController@about');
+Route::get('about', function () {
+  return view('frontend/about');
+});
+
+Route::get('0/about', 'ContextController@about');
 
 Route::get('context/blog', 'ContextController@blog');
     
 Route::get('context/contact', 'ContextController@contact');
+
 
 Auth::routes(['verify' => true]);
 

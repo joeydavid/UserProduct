@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('price');
             $table->string('barcode');
             $table->string('description');
+            $table->string('user');
             $table->timestamps();
         });
     }

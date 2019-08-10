@@ -10,18 +10,10 @@
 
 <div> {{ $test4 }} </div>
 
-<div></div>
+<div>
     @for($i = 0; $i < 10; $i++)
         {{ $i }} <br>
     @endfor
-
-<div>
-    @php 
-        $names = ['alex', 'billy', 'dale'];
-    @endphp 
-    @foreach($names as $name)
-        <br>
-    @endforeach
 </div>
 
 <div>
