@@ -5,9 +5,15 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">
-                    <h1 class="mb-1 font">Stylish Portfolio</h1>
-                    <h3 class="mb-5">A Free Bootstrap Theme by Start Bootstrap</h3>
-                    <a class="btn btn-primary btn-lg js-scroll-trigger" href="#about">Find Out More</a>
+                @foreach($banners as $value)
+                    <h1 class="mb-1 font">
+                      {{ $value->bannertitle }}
+                    </h1>
+                    <h3 class="mb-5">
+                      {{ $value->bannerdescription }}
+                    </h3>
+                    @endforeach
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
                 </div>
             </div>
         </div>
@@ -57,50 +63,23 @@
             </div>
         </div>
         <div class="row">
+        @foreach($services as $value)
             <div class="col-sm-3">
-                <span class="service-icon rounded-circle mx-auto mb-3">
-                    <i class="fas fa-mobile-alt"></i>
-                </span>
+                <span class="service-icon rounded-circle mx-auto mb-3"> <i class=" {{ $value->icons }} "> </i> </span>
             </div>
+        @endforeach
+        </div>
+        <div class="row">
+        @foreach($services as $value)
             <div class="col-sm-3">
-                <span class="service-icon rounded-circle mx-auto mb-3">
-                    <i class="fas fa-pencil-alt"></i>
-                </span>
+                <h4 class="color-bold"><strong> {{ $value->title }} </strong></h4>
+                <p class="text-faded mb-0 color-bold"> {{ $value->text }} </p>
             </div>
-            <div class="col-sm-3">
-                <span class="service-icon rounded-circle mx-auto mb-3">
-                    <i class="far fa-thumbs-up"></i>
-                </span>
-            </div>
-            <div class="col-sm-3">
-                <span class="service-icon rounded-circle mx-auto mb-3">
-                    <i class="fas fa-question"></i>
-                </span>
-            </div>
+        @endforeach
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <h4 class="color-bold"><strong>Responsive</strong></h4>
-                <p class="text-faded mb-0 color-bold">Looks great on any screen size!</p>
-            </div>
-            <div class="col-sm-3">
-                <h4 class="color-bold"><strong>Redesigned</strong></h4>
-                <p class="text-faded mb-0 color-bold">Freshly redesigned for Bootstrap 4.</p>
-            </div>
-            <div class="col-sm-3">
-                <h4 class="color-bold"><strong>Favorited</strong></h4>
-                <p class="text-faded mb-0 color-bold">Millions of users
-                <i class="fas fa-heart"></i>Start Bootstrap!</p>
-            </div>
-            <div class="col-sm-3">
-                <h4 class="color-bold"><strong>Question</strong></h4>
-                <p class="text-faded mb-0 color-bold" >I question mark to ask you a question...</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="padding">
-                </div>
+                <div class="padding"></div>
             </div>
         </div>
     </div>
@@ -122,8 +101,7 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-sm-12">
-                <div class="padding">
-                </div>
+                <div class="padding"></div>
             </div>
         </div>
         <div class="row">

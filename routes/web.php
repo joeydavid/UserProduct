@@ -11,20 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend/index');
-});
+// Route::get('/', function () {
+//     return view('frontend/index');
+// });
 
 Route::get('about', function () {
   return view('frontend/about');
 });
 
-Route::get('0/about', 'ContextController@about');
+Route::get('context/about', 'ContextController@about');
 
 Route::get('context/blog', 'ContextController@blog');
     
 Route::get('context/contact', 'ContextController@contact');
 
+Route::get('/', 'FrontendController@index');
 
 Auth::routes(['verify' => true]);
 
@@ -41,5 +42,9 @@ Route::group([
     Route::resource('products', 'ProductController');
 
     Route::resource('tasks', 'TaskController');
+
+    Route::resource('banners', 'BannerController');
+
+    Route::resource('services', 'ServiceController');
 
   });
