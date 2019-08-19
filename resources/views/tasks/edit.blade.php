@@ -39,16 +39,16 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Select') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('User') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control @error('select') is-invalid @enderror" name="select" required>
+                                <select class="form-control @error('user') is-invalid @enderror" name="user" required>
                                             <option selected disabled>Select User--</option>
                                         @foreach($users as $value)
-                                            <option value="{{ $value->name }}">{{ $value->name }}</option>
+                                            <option value="{{ $value->email }}">{{ $value->email }}</option>
                                         @endforeach
                                 </select>
-                                @error('select')
+                                @error('user')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

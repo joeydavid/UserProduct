@@ -20,7 +20,7 @@
                             <tr>
                                 <th scope="col">Title</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Select</th>
+                                <th scope="col">User</th>
                                 <th scope="col">Delete</th>
                                 <th scope="col">Edit</th>
                             </tr>
@@ -29,13 +29,13 @@
                             @foreach($tasks as $value)
                                 <tr>
                                     <td>
-                                        {{$value->title}}
+                                        {{ $value->title }}
                                     </td>
                                     <td>
-                                        {{$value->description}}
+                                        {{ $value->description }}
                                     </td>
                                     <td>
-                                        {{$value->select}}
+                                        {{ $value->user }}
                                     </td>
 
                                     <td>

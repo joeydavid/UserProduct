@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\User;
 
 class ProductController extends Controller
 {
@@ -28,8 +29,10 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $users = User::all();
+        // dd($users);
         // $products = Product::all();
-        return view('products.create');
+        return view('products.create', compact('users'));
     }
 
     /**
@@ -45,6 +48,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'barcode' => 'required|numeric',
             'description' => 'required',
+            'user' => 'required',
         ]);
         
         // dd($request->all());
@@ -53,6 +57,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'barcode' => $request->barcode,
             'description' => $request->description,
+            'user' => $request->user,
         ]);
         return redirect('products')->with('success', 'Product Added Successfully.');
     }
@@ -76,8 +81,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $users = User::all();
         // dd($product);
-        return view('products.edit', compact('product'));
+        return view('products.edit', compact('product', 'users'));
     }
 
     /**
@@ -101,6 +107,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'barcode' => 'required|numeric',
             'description' => 'required',
+            'user' => 'required',
         ]);
 
         $product =  Product::find($product->id);
@@ -109,6 +116,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->barcode = $request->barcode;
         $product->description = $request->description;
+        $product->user = $request->user;
         $product->save();
 
         return redirect('products')->with('success', 'Product Updated Successfully.');

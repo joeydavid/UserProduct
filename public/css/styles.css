@@ -1,0 +1,215 @@
+html, body{
+    font-family: 'Open Sans', sans-serif;
+}
+.pencil{
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 20rem;
+    padding-bottom: 13.5rem;
+    background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.1)),to(rgba(255,255,255,.1))),url(/images/pencil1.jpg);
+    background: linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%), url(/images/pencil1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.font{
+    font-size: 5.5rem;
+    font-weight: bolder;
+}
+.mb-5{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-style: oblique;
+}
+.btn{
+    margin-bottom: 90px;
+    font-weight: 700;
+}
+.bg-color{
+    background-color: antiquewhite;
+}
+.padding{
+    padding-top: 100px;
+}
+.bold1{
+    font-weight: 600;
+}
+.bold h2{
+    font-weight: 600;
+    font-size: 3.5rem;
+}
+.margin{
+    margin-bottom: 50px;
+}
+.bg{
+    background-color: #007bff;
+}
+.font-color{
+    color: #ecb807!important;
+    font-weight: bolder;
+}
+.font-bold{
+    color: white;
+    font-weight: bolder;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+.service-icon {
+    background-color: #fff;
+    color: #1d809f;
+    height: 7rem;
+    width: 7rem;
+    display: block;
+    line-height: 7.5rem;
+    font-size: 2.25rem;
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+}
+.color-bold{
+    color: white;
+    font-weight: bolder;
+}
+.scissor{
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 20rem;
+    padding-bottom: 8rem;
+    background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.1)),to(rgba(255,255,255,.1))),url(/images/scissors.jpg);
+    background: linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%), url(/images/scissors.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-white{
+    background-color: whitesmoke;
+}
+.weight-size{
+    font-weight: bolder;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+.img-fluid {
+    width: 100%;
+    height: auto;
+    /* padding: 50px; */
+     -webkit-transition: padding .5s; /* For Safari 3.1 to 6.0 */
+    transition: padding .5s;
+  }
+  
+.img-fluid:hover {
+    padding: 20px;
+    opacity: 0.5;
+  }
+  .caption{
+      position: absolute;
+      bottom: 20%;
+      left: 20%;
+      color: #FFF;
+  }
+  .padding-bot{
+      padding-bottom: 100px;
+  }
+  .bg-primary{
+    background-color: #1d809f!important;
+  }
+  .map {
+    height: 30rem;
+}
+footer.footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+footer.footer .social-link {
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4.3rem;
+    font-size: 1.5rem;
+    background-color: #1d809f;
+    transition: background-color .15s ease-in-out;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+}
+
+
+
+.portfolio-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    max-width: 530px;
+    margin: auto auto 1rem;
+  }
+  
+  .portfolio-item .caption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(33, 37, 41, 0.2);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .portfolio-item .caption .caption-content {
+    color: #fff;
+    margin: auto 2rem 2rem;
+  }
+  
+  .portfolio-item .caption .caption-content h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  
+  .portfolio-item .caption .caption-content p {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  @media (min-width: 992px) {
+    .portfolio-item {
+      max-width: none;
+      margin: 0;
+    }
+    .portfolio-item .caption {
+      -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
+      -webkit-clip-path: inset(0px);
+      clip-path: inset(0px);
+    }
+    .portfolio-item .caption .caption-content {
+      -webkit-transition: opacity 0.25s;
+      transition: opacity 0.25s;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      margin-bottom: 5rem;
+    }
+    .portfolio-item img {
+      -webkit-transition: -webkit-clip-path 0.25s ease-out;
+      -webkit-clip-path: inset(-1px);
+      clip-path: inset(-1px);
+    }
+    .portfolio-item:hover img {
+      -webkit-clip-path: inset(2rem);
+      clip-path: inset(2rem);
+    }
+    .portfolio-item:hover .caption {
+      background-color: rgba(29, 128, 159, 0.9);
+      -webkit-clip-path: inset(2rem);
+      clip-path: inset(2rem);
+    }
+  }
+
+  #sixth{
+      margin: 100px 0 100px 0;
+  }
+.btn-xl{
+  padding: 30px 40px 30px 40px;
+}

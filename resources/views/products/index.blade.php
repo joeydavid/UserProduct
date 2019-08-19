@@ -22,6 +22,7 @@
                             <th scope="col">Price</th>
                             <th scope="col">Barcode</th>
                             <th scope="col">Description</th>
+                            <th scope="col">User</th>
                             <th scope="col">Delete</th>
                             <th scope="col">Edit</th>
                             </tr>
@@ -30,16 +31,19 @@
                             @foreach($products as $value)
                                 <tr>
                                     <td>
-                                        {{$value->name}}
+                                        {{ $value->name }}
                                     </td>
                                     <td>
-                                        {{$value->price}}
+                                        {{ $value->price }}
                                     </td>
                                     <td>
-                                        {{$value->barcode}}
+                                        {{ $value->barcode }}
                                     </td>
                                     <td>
-                                        {{$value->description}}
+                                        {{ $value->description }}
+                                    </td>
+                                    <td>
+                                        {{ $value->user }}
                                     </td>
                                     <td>
                                         <form action="{{ route('products.destroy', $value->id)}}" method="post">
