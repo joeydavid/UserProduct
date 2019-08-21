@@ -47,4 +47,6 @@ Route::group([
 
     Route::resource('services', 'ServiceController');
 
+    Route::resource('porfolios', 'PorfolioController');
+
   });
