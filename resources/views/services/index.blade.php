@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="jumbotron jumbotron-fluid">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -12,7 +13,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <table class="table">
+                        <table class="table table-dark table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col"> Icons </th>
@@ -52,5 +53,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
