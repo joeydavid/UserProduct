@@ -7,7 +7,7 @@ html, body{
     display: table;
     width: 100%;
     height: auto;
-    padding-top: 20rem;
+    padding-top: 16rem;
     padding-bottom: 13.5rem;
     background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.1)),to(rgba(255,255,255,.1))),url(/images/pencil1.jpg);
     background: linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%), url(/images/pencil1.jpg);
@@ -15,18 +15,50 @@ html, body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+.mb-1{
+  margin-top: 20px;
+}
 .font{
-    font-size: 5.5rem;
-    font-weight: bolder;
+    font-size: 5.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: .25rem;
+}
+.margin-bot{
+    margin-bottom: 10px;
 }
 .mb-5{
-    font-size: 1.5rem;
-    font-weight: bolder;
+    font-size: 1.75rem;
+    font-weight: 700;
     font-style: oblique;
+}
+.btn-xl {
+  padding: 1.25rem 2.5rem;
+}
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
 }
 .btn{
     margin-bottom: 90px;
     font-weight: 700;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border: 1px solid transparent;
+    user-select: none;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+}
+.a-selector a:hover{
+    background: #1D809F;
 }
 .bg-color{
     background-color: antiquewhite;
@@ -136,8 +168,6 @@ footer.footer .social-link {
     box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
 }
 
-
-
 .portfolio-item {
     display: block;
     position: relative;
@@ -210,6 +240,3 @@ footer.footer .social-link {
   #sixth{
       margin: 100px 0 100px 0;
   }
-.btn-xl{
-  padding: 30px 40px 30px 40px;
-}

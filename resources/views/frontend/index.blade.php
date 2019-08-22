@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="text-center">
+                <div class="text-center a-selector">
                 @foreach($banners as $value)
                     <h1 class="mb-1 font">
                       {{ $value->bannertitle }}
@@ -13,7 +13,7 @@
                       {{ $value->bannerdescription }}
                     </h3>
                     @endforeach
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger hover-me" href="#about">Find Out More</a>
                 </div>
             </div>
         </div>
